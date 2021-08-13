@@ -1,0 +1,40 @@
+/*reset CSS*/
+*{
+    padding: 0;   /*loại bỏ padding*/
+    margin: 0;    /*loại bỏ margin*/
+    box-sizing: border-box;
+}
+/* Nguyên tắc làm
+  1.từ ngoài vào trong
+  2.từ trên xuống dưới
+  3.tổng quan đến chi tiết 
+*/
+
+/*
+  1. vị trí
+  2. kích thước(width, height)
+  3. màu sắc
+  4. kiểu dáng( kiểU chữ, hình dạng,...)
+*/
+
+#main{
+
+}
+
+#header{
+    height: 46px;
+    background-color: black;
+
+}
+
+#slider{
+
+}
+
+#content{
+
+}
+
+#footer{
+
+}
