@@ -4,6 +4,10 @@
     margin: 0;    /*loại bỏ margin*/
     box-sizing: border-box;
 }
+
+html{
+    font-family: Arial, Helvetica, sans-serif;  /*set font chữ cho cả web, chưa dùng cần tới font css*/
+}
 /* Nguyên tắc làm
   1.từ ngoài vào trong
   2.từ trên xuống dưới
@@ -26,6 +30,28 @@
     background-color: black;
 
 }
+#navigation{
+
+}
+#navigation li{
+   display: inline-block;  /*xếp trên 1 hàng, giữ lại khối dùng block*/
+}
+#navigation li a{
+    color: white;
+    text-decoration: none;  /*bỏ gạch chân*/
+    line-height: 46px;   /*chỉnh chiều cao dòng bằng header để căn giữa*/
+    padding: 0 24px;     /*khoảng cách 2 bên,trên dưới bằng 0, trái phải bằNg 24px*/ 
+    display: inline-block;  /*set kích thước ăn theo line hight, (chỉnh background)*/
+}
+#navigation li:hover a{
+    color: #000;
+    background-color: #ccc;
+}
+
+#navigation .subnavigation{
+    display: none;   /*ẩn đi li cấp 2*/
+}
+
 
 #slider{
 
