@@ -25,35 +25,91 @@ html{
 
 }
 
-#header{
+#header{ 
+    position: fixed;/*cho header dính 1 chỗ*/
+    top: 0;
+    left:0;
+    right: 0;
     height: 46px;
     background-color: black;
 
 }
 #navigation{
+    display: inline-block; /*bỏ tính kế thừa, nội dung ngang đâu thẻ ngang đó, trừa chỗ cho search*/
+}
+#navigation, .subnavigation{
+    list-style-type: none; /*ẩn đi dấu chấm trên danh sách, mặc định của nó là dấu chấm*/
 
 }
-#navigation li{
-   display: inline-block;  /*xếp trên 1 hàng, giữ lại khối dùng block*/
+#navigation > li{
+    display: inline-block; /*set chiểu ngang chỉ cho li cấp 1*/
 }
-#navigation li a{
+#navigation li{
+   
+   position: relative; /*thèn cha*/
+}
+#navigation > li > a{  /*chỉ lấy thẻ con trực tiếp, cấp 1*/
+    color: white;
+    text-transform: uppercase; /*viết hoa thẻ cấp 1*/
+}
+
+#navigation li a{  /*như này là lấy cả thẻ a cấp 2 luôn*/
     color: white;
     text-decoration: none;  /*bỏ gạch chân*/
     line-height: 46px;   /*chỉnh chiều cao dòng bằng header để căn giữa*/
     padding: 0 24px;     /*khoảng cách 2 bên,trên dưới bằng 0, trái phải bằNg 24px*/ 
-    display: inline-block;  /*set kích thước ăn theo line hight, (chỉnh background)*/
+    display: block;  /*set kích thước ăn theo line hight, (chỉnh background)*/
 }
-#navigation li:hover a{
+#navigation li:hover .subnavigation{
+    display: block; /*di chuôt mới hiện lên cấp 2, mạnh hơn display block ở dưới*/
+}
+
+/*cách viết gộp, css cho cả 2*/
+#navigation > li:hover > a , /*chỉ tác động vào thẻ cấp 1*/
+#navigation .subnavigation li:hover a{  /*thẻ cấp 2*/
+ 
     color: #000;
     background-color: #ccc;
 }
 
+
+
 #navigation .subnavigation{
     display: none;   /*ẩn đi li cấp 2*/
+    min-width: 160px; /*cho dài ra, content dài thì sẽ dài theo*/
+    top: 100%; /*set luôn phòng trường hơp web hiển thị ko chuẩn*/
+    left: 0;
+    position: absolute;  /*thèn con*/
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /*đổ bóng*/
+}
+#navigation .subnavigation a{   /*CẤP 2*/
+    color: black; /*chữ trong subnav màu đen*/
+    padding: 0 12px; /*cho chữ thụt zoo*/
+    line-height: 38px;
+}
+#navigation .nav-arrow-down{  /*css kích thước cho cái mũi tên xuống*/
+    font-size: 14px;
+}
+#header .search-btn{
+    float: right;  /*kéo nó sang bên phải */
+    padding: 0 21px;
+    cursor: pointer; /*di vào hiệN lên bàn tay, nguyên tắc cái chi bấm được thì đổi như này*/
+}
+#header .search-btn:hover{  
+    background-color: #f44336;
+}
+#header .search-icon{
+    color: white;
+    font-size: 20px;
+    line-height: 46px;
 }
 
 
 #slider{
+    min-height: 500px;
+    background-color:white;
+    margin-top: 46px; /*không có thì sẽ bị header chồng lên*/
 
 }
 
