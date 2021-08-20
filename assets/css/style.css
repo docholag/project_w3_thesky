@@ -7,6 +7,7 @@
 
 html{
     font-family: Arial, Helvetica, sans-serif;  /*set font chữ cho cả web, chưa dùng cần tới font css*/
+    scroll-behavior: smooth;
 }
 /* Nguyên tắc làm
   1.từ ngoài vào trong
@@ -183,7 +184,7 @@ html{
 
 #content .content-selection{
     width: 800px;
-    padding: 64px 0;
+    padding: 64px 0 112px;  /*giãn xuống cả 3 ông*/
     margin-left: auto; /*căn giữa text*/
     margin-right: auto;
 }
@@ -206,7 +207,7 @@ html{
 }
 #content .about-text{
     margin-top: 25px;  /*đẩy khoảng cách của text với we love music*/
-    font-size: 15px;
+    font-size: 14px;
     text-align: justify; /*căn lề 2 bên text*/
     line-height: 1.4; /*khoảng cách giữa các dòng*/
 }
@@ -273,7 +274,7 @@ html{
     margin-top: 32px;
     /* margin-left: -8px;
     margin-right: -8px; để cho 2 bên bằng nhau, bằng cái thẻ bên trên */
-    padding-bottom: 48px;
+    
 }
 
 /* .place-item{
@@ -465,5 +466,26 @@ html{
     color: #000;
     cursor: pointer;
 }
+.map-section img {
+    width: 100%; /*để khi zoom thì ảnh có thể nhỏ lại*/
+    filter: grayscale(50%);
+}
 
 /*footer section*/
+#footer{
+    padding: 64px 16px;
+    text-align: center;
+
+}
+#footer .social-list{
+    font-size: 24px;
+
+}
+#footer .social-list a{
+    color:#000;
+    text-decoration: none;
+}
+#footer .coppy-right{
+    margin-top: 15px;
+    color: #000;
+}
