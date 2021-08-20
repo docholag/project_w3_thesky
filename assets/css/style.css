@@ -20,13 +20,53 @@ html{
   3. màu sắc
   4. kiểu dáng( kiểU chữ, hình dạng,...)
 */
+/*common: phần dùng chung*/
 .clear{
     clear: both; /*giải quyết vấn đề thẻ div to không ôm lấy div nhỏ ở trong*/
 }
 .text-white{
     color: white !important;  /*khi nào cần thì gọi ra bên html, mạnh lém, ưu tiên cao*/
 }
+.margin-top8{
+    margin-top: 8px !important;
+}
+.margin-top16{
+    margin-top: 16px !important;
+}
 
+/*phân chia bố cục theo cột, hàng, đỡ mất công đặt class rồi css từng cái*/
+/*demo cho phần places-list, đã comment lại phần dưới*/
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+/*giải quyết thẻ cha không ôm hết thẻ con, có thể thay thế clear (element giả)*/
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/*đã comment lại ở dưới places-item*/
+.col{
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+
+}
+.col-half{
+    width: 50%;
+}
+
+.col-third{
+    width: 33.33333%;
+}
+
+.col-full{
+    width: 100%;
+}
+
+/*main*/
 #main{
 
 }
@@ -174,9 +214,9 @@ html{
     margin-top: 47px;
 }
 #content .member-item{
-    float: left;
-    width: calc(100% / 3);  /*căn cho đều 3 thèn*/
-    /* width: 33.333333%; */
+    /* float: left; (không cần vì đã sử dụng row, col)
+    width: calc(100% / 3);  căn cho đều 3 thèn 
+     width: 33.333333%; */
     text-align: center; /*căn giữa cả name và img*/
 }
 #content .member-name{
@@ -231,16 +271,16 @@ html{
 /*place*/
 .places-list{
     margin-top: 32px;
-    margin-left: -8px;
-    margin-right: -8px; /*để cho 2 bên bằng nhau, bằng cái thẻ bên trên */
+    /* margin-left: -8px;
+    margin-right: -8px; để cho 2 bên bằng nhau, bằng cái thẻ bên trên */
     padding-bottom: 48px;
 }
 
-.place-item{
-    float: left; /*cho nằm trên 1 hàng*/
+/* .place-item{
+    /* float: left; cho nằm trên 1 hàng 
     width: 33.333333%;
-    padding: 0 8px; /*khoảng cách giữa các item*/
-}
+    /* padding: 0 8px; khoảng cách giữa các item 
+} */
 
 .place-img{
     width: 100%; /*để ảnh không lớn hơn thẻ cha*/
@@ -389,6 +429,43 @@ html{
         opacity: 1;
     }
 }
+
+/*contact form*/
+.contact-content{
+    margin-top: 50px;
+}
+.contact-infor{
+    font-size: 18px;
+    line-height: 1.5;
+
+}
+.contact-infor i{
+    width: 30px; /*khoảng cách icon với text*/
+    display: inline-block;
+}
+.contact-form{
+    font-size: 15px;
+
+}
+.contact-form .form-control{
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    outline: none; /*đường viền khi nhập text*/
+}
+.contact-form .form-submit-btn{
+    background-color: #000;
+    color:#fff;
+    border: none;
+    padding: 10px 16px;
+    float: right;
+}
+.contact-form .form-submit-btn:hover{
+    background-color: #ccc;
+    color: #000;
+    cursor: pointer;
+}
+
 /*footer section*/
 #footer{
 
