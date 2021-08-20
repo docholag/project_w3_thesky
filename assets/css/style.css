@@ -172,9 +172,11 @@ html{
     min-height: 500px;
     padding-top: 50%; /*50% chiều rộng của chính nó, giúp không bị vỡ khi zoom*/
     margin-top: 46px; /*không có thì sẽ bị header chồng lên*/
-    background: url('/project_w3_thesky/assets/img/slider/slider2.jpg') top center / cover no-repeat; /*cú pháp viết tắt*/
+    /* background: url('/project_w3_thesky/assets/img/slider/slider2.jpg') top center / cover no-repeat; cú pháp viết tắt */
     /* background-repeat: cover no-repeat ;
     background-position: top center; */
+    background: url(https://docholag.github.io/project_w3_thesky/assets/img/slider/slider2.jpg) top center / cover no-repeat;
+
     
 }
 
