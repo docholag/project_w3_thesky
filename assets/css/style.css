@@ -80,39 +80,39 @@ html{
     z-index: 1; /*chiều sâu, ko có sẽ bị ảnh che đi*/
 
 }
-#navigation{
+#nav{
     display: inline-block; /*bỏ tính kế thừa, nội dung ngang đâu thẻ ngang đó, trừa chỗ cho search*/
 }
-#navigation, .subnavigation{
+#nav, .sub-nav{
     list-style-type: none; /*ẩn đi dấu chấm trên danh sách, mặc định của nó là dấu chấm*/
 
 }
-#navigation > li{
+#nav > li{
     display: inline-block; /*set chiểu ngang chỉ cho li cấp 1*/
 }
-#navigation li{
+#nav li{
    
    position: relative; /*thèn cha*/
 }
-#navigation > li > a{  /*chỉ lấy thẻ con trực tiếp, cấp 1*/
+#nav > li > a{  /*chỉ lấy thẻ con trực tiếp, cấp 1*/
     color: white;
     text-transform: uppercase; /*viết hoa thẻ cấp 1*/
 }
 
-#navigation li a{  /*như này là lấy cả thẻ a cấp 2 luôn*/
+#nav li a{  /*như này là lấy cả thẻ a cấp 2 luôn*/
     color: white;
     text-decoration: none;  /*bỏ gạch chân*/
     line-height: 46px;   /*chỉnh chiều cao dòng bằng header để căn giữa*/
     padding: 0 24px;     /*khoảng cách 2 bên,trên dưới bằng 0, trái phải bằNg 24px*/ 
     display: block;  /*set kích thước ăn theo line hight, (chỉnh background)*/
 }
-#navigation li:hover .subnavigation{
+#nav li:hover .sub-nav{
     display: block; /*di chuôt mới hiện lên cấp 2, mạnh hơn display block ở dưới*/
 }
 
 /*cách viết gộp, css cho cả 2*/
-#navigation > li:hover > a , /*chỉ tác động vào thẻ cấp 1*/
-#navigation .subnavigation li:hover a{  /*thẻ cấp 2*/
+#nav > li:hover > a , /*chỉ tác động vào thẻ cấp 1*/
+#nav .sub-nav li:hover a{  /*thẻ cấp 2*/
  
     color: #000;
     background-color: #ccc;
@@ -120,7 +120,7 @@ html{
 
 
 
-#navigation .subnavigation{
+#nav .sub-nav{
     display: none;   /*ẩn đi li cấp 2*/
     min-width: 160px; /*cho dài ra, content dài thì sẽ dài theo*/
     top: 100%; /*set luôn phòng trường hơp web hiển thị ko chuẩn*/
@@ -129,12 +129,12 @@ html{
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /*đổ bóng*/
 }
-#navigation .subnavigation a{   /*CẤP 2*/
+#nav .sub-nav a{   /*CẤP 2*/
     color: black; /*chữ trong subnav màu đen*/
     padding: 0 12px; /*cho chữ thụt zoo*/
     line-height: 38px;
 }
-#navigation .nav-arrow-down{  /*css kích thước cho cái mũi tên xuống*/
+#nav .nav-arrow-down{  /*css kích thước cho cái mũi tên xuống*/
     font-size: 14px;
 }
 #header .search-btn{
@@ -479,13 +479,18 @@ html{
 }
 #footer .social-list{
     font-size: 24px;
+    opacity: 0.8;
 
 }
 #footer .social-list a{
     color:#000;
     text-decoration: none;
 }
-#footer .coppy-right{
-    margin-top: 15px;
+#footer .docholag{
+    margin-top: 10px;
     color: #000;
+    font-size: 15px;
+    font-style: italic;
+    opacity: 0.6;
 }
+   
