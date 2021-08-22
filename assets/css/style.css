@@ -78,6 +78,7 @@ html{
     height: 46px;
     background-color: black;
     z-index: 1; /*chiều sâu, ko có sẽ bị ảnh che đi*/
+  
 
 }
 #nav{
@@ -137,14 +138,34 @@ html{
 #nav .nav-arrow-down{  /*css kích thước cho cái mũi tên xuống*/
     font-size: 14px;
 }
+
+#header .mobile-menu-btn{
+    position: absolute; /*không có thì icon menu sẽ bị đá văng ra, con của header: fixed*/
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#header .mobile-menu-btn, 
 #header .search-btn{
     float: right;  /*kéo nó sang bên phải */
     padding: 0 21px;
     cursor: pointer; /*di vào hiệN lên bàn tay, nguyên tắc cái chi bấm được thì đổi như này*/
 }
-#header .search-btn:hover{  
+#header .search-btn:hover{ 
+    cursor: pointer; 
     background-color: #f44336;
 }
+
+#header .mobile-menu-btn:hover{
+    background-color: #ccc;
+}
+
+#header .mobile-menu-btn:hover .menu-icon{
+    color: #000;
+}
+
+#header .menu-icon,
 #header .search-icon{
     color: white;
     font-size: 20px;
@@ -184,6 +205,7 @@ html{
 
 #content .content-selection{
     width: 800px;
+    max-width: 100%;
     padding: 64px 0 112px;  /*giãn xuống cả 3 ông*/
     margin-left: auto; /*căn giữa text*/
     margin-right: auto;
@@ -325,6 +347,7 @@ html{
 .place-buy-btn:hover{
     color: black;
     background-color: #ccc;
+    cursor: pointer;
 }
 
 /*modal*/
@@ -398,7 +421,7 @@ html{
 }
 #buy-tickets:hover{
     opacity: 0.9;
-}
+   }
 
 #buy-tickets{
     background: #009688;

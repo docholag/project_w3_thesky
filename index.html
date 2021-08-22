@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE SKY</title>
-    <link rel="icon" href="https://image.flaticon.com/icons/png/128/2800/2800039.png" >
+    <link rel="icon" href="./assets/img/tittle/tag.png" >
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css"> <!--viết ở dưới, chứ viết trên file style sẽ ko ăn(thứ tự ưu tiên)-->
+
     <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
 </head>
 <body>
@@ -19,7 +21,7 @@
                    <li><a href="#tour">Tour</a></li>
                    <li><a href="#contact">Contact</a></li>
                    <li>
-                       <a href="">
+                       <a href="#">
                            More
                            <i class="nav-arrow-down ti-angle-down"></i>    <!--add icon-->
                         </a>
@@ -31,11 +33,15 @@
                    </li>
                </ul>
                <!--end nav-->
-               <!--begin search button--> 
+               <!-- mobile menu button--> 
+               <div id="mobile-menu" class="mobile-menu-btn">
+                   <i class="menu-icon ti-menu"></i>
+               </div>
+               <!--search button-->
                 <div class="search-btn">
                     <i class="search-icon ti-search"></i>
                 </div>
-               <!--end search button-->
+              
 
            </div>
 
@@ -230,5 +236,39 @@
             event.stopPropagation() //ngừng việc nổ bọt lại, từ thèn container
         })
     </script>
+
+    
+    <script> 
+        //script ẩn hiện menu
+        var header = document.getElementById('header') //lấy id header
+        var mobileMenu = document.getElementById('mobile-menu')
+        var headerHeight =header.clientHeight; // tạo biến headerHeight gán giá trị bằng chiều cao header 
+
+        mobileMenu.onclick = function(){  //click sẽ nhận
+            var isClosed = header.clientHeight === headerHeight //(=== : so sánh với biến headerHeight )
+            if (isClosed) { //nếu đóng thì sửa lại height bằng auto
+                header.style.height = 'auto';  //sửa css luôn
+            } else{
+                header.style.height = null; //hoặc để giá trị (chiều cao header(khó sửa khi cần thiết))
+            }
+        }
+        //tự động đóng khi chọn menu
+        var menuItems = document.querySelectorAll('#nav li a[href*="#"]')  //lấy dữ liệu trong #nav>li>a
+        for (var i = 0; i < menuItems.length; i++){ //duyệt qua các mảng trong thẻ 
+            var menuItem = menuItems[i];  //lấy giá trị trong mảng
+            
+            menuItem.onclick = function(event) { //lắng nghe khi click vào sẽ ẩn đi menu
+                //kiểm tra xem (họ hàng gần nhất của element) và kiểm tra xem họ hàng gần nhất đó có tồn tại(contains) trong class subnav không, nếu có thì Parent đúng, không thì sai
+                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('sub-nav'); //classList: lệnh để truy cập vào class, this: chính thèn nó bấm vào
+                if (isParentMenu){ //nếu phải Parent 
+                    event.preventDefault(); //bỏ qua cái mặc đinh, mặc định là #: trở về trang đầu
+                }
+                else{
+                    header.style.height = null; //ẩn đi
+                }
+        }
+    } 
+    </script>
+
 </body>
 </html>

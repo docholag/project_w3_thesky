@@ -1,0 +1,40 @@
+/*pc*/
+@media (min-width: 1204px) {
+    /*gọi class hoặc id*/  
+}
+
+/*tablet*/
+@media (min-width: 740px) and (max-width: 1023px){
+     /*gọi class hoặc id*/  
+}
+
+/*mobile*/
+@media (max-width: 739px){
+    #header{
+        overflow: hidden; /*mặc định là hiện*/
+    }
+    #header .mobile-menu-btn{
+        display: block;
+    }
+    #header .search-btn{  /*ẩn search thay bằng menu*/
+        display: none;
+    }
+
+    #nav{
+        display: block;
+    }
+    #nav > li{ 
+        display: block;  /*ghi đè lên inline block ở thẻ nav>li*/
+    }
+    #nav > li:first-child{ /*chỉ lấy thằng con đầu tiên của li*/
+        display: inline-block;
+    }
+    #nav .sub-nav{
+        position: initial; /*để về giá trị mặc định, mobile không cần position: absilute*/
+        background-color: #333;
+    }
+    #nav .sub-nav a{
+        color: #fff;
+        padding: 5px 40px; /*cách lề ra để giống con của more*/
+    }
+}
