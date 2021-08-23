@@ -18,7 +18,9 @@
     }
     .s-full-width{
         width: 100% !important; 
-        margin-left: -5px;
+    }
+    .s-marginSend{
+        margin: 0px -8px;
     }
 
     .s-col-full{
@@ -58,6 +60,7 @@
     }
     #content .member-img{
         width: 50%;
+        height: 230px;
      
     }
     .row{ /*xoá thanh trắng thừa bên phải, do team-img chọc ra*/
