@@ -10,6 +10,21 @@
 
 /*mobile*/
 @media (max-width: 739px){
+    .s-mt-8{
+        margin-top: 8px;
+    }
+    .mt-16{
+        margin: 16px;
+    }
+    .s-full-width{
+        width: 100% !important; 
+        margin-left: -5px;
+    }
+
+    .s-col-full{
+        width: 100% !important;
+    }
+
     #header{
         overflow: hidden; /*mặc định là hiện*/
     }
@@ -37,4 +52,23 @@
         color: #fff;
         padding: 5px 40px; /*cách lề ra để giống con của more*/
     }
+    #content .member-item{
+        margin-top: 30px;
+        width: 100%; /*chiếm hết chiều ngang*/
+    }
+    #content .member-img{
+        width: 50%;
+     
+    }
+    .row{ /*xoá thanh trắng thừa bên phải, do team-img chọc ra*/
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    .contact-form{
+        margin-top: 16px;
+    }
+    .contact-infor{
+        padding-left: 24px;
+    }
+
 }

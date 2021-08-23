@@ -67,6 +67,9 @@ html{
     width: 100%;
 }
 
+.l-full-width{
+    width: 100%;
+}
 /*main*/
 
 
@@ -293,7 +296,7 @@ html{
 }
 /*place*/
 .places-list{
-    margin-top: 32px;
+    margin-top: 16px;
     /* margin-left: -8px;
     margin-right: -8px; để cho 2 bên bằng nhau, bằng cái thẻ bên trên */
     
